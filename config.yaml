@@ -1,0 +1,31 @@
+data:
+  evfile : ../SMC_data/PH.txt
+  scfile : ../SMC_data/SC/L25102310353899B1B39238_SC00.fits
+binning:
+  roiwidth : 20.0
+  binsz : 0.1
+  binsperdec: 8
+  coordsys : 'CEL'
+
+selection:
+  ra: 258.25
+  dec : -39.75
+  emin : 500
+  emax : 400000
+  zmax : 100
+  evclass : 128
+  evtype : 3
+  target : 'RX J1713.7-3946'
+  tmin : 239557417
+  tmax : 783788691
+
+gtlike:
+  edisp: True
+  irfs: 'P8R3_SOURCE_V3'
+  edisp_disable: ['isodiff', 'galdiff']
+
+model:
+  src_roiwidth : 30.0
+  galdiff : '../fermi_models/gll_iem_v07.fits'
+  isodiff : '../fermi_models/iso_P8R3_SOURCE_V3_v1.txt'
+  catalogs: ['/home/oslaf/hcummins/standard_analysis/fyp/fermi_models/gll_psc_v27.fit']
