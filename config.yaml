@@ -1,0 +1,37 @@
+data:
+  evfile : ../../SMC_data/PH_abs.txt
+  scfile : ../../SMC_data/SC/L260319183808C5A6D07236_SC00.fits
+
+binning:
+  roiwidth : 20.0
+  binsz : 0.1
+  binsperdec : 8
+  coordsys : 'CEL'
+
+selection:
+  ra : 258.25
+  dec : -39.75
+  emin : 3000
+  emax : 1000000
+  zmax : 105
+  evclass : 128
+  target : 'RX J1713.7-3946'
+  tmin : 550546717
+  tmax : 628294042
+
+components:
+  - { selection : { evtype : 8  } }   # PSF1
+  - { selection : { evtype : 16 } }   # PSF2
+  - { selection : { evtype : 32 } }   # PSF3
+
+gtlike:
+  edisp : True
+  irfs : 'P8R3_SOURCE_V3'
+  edisp_disable : ['isodiff', 'galdiff']
+
+model:
+  src_roiwidth : 30.0
+  galdiff : /home/oslaf/hcummins/standard_analysis/fyp/fermi_models/gll_iem_v07.fits
+  isodiff : /home/oslaf/hcummins/standard_analysis/fyp/fermi_models/iso_P8R3_SOURCE_V3_v1.txt
+  catalogs :
+    - /home/oslaf/hcummins/standard_analysis/fyp/fermi_models/gll_psc_v27.fit
